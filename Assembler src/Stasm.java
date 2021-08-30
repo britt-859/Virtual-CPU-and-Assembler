@@ -96,7 +96,7 @@ public class Stasm {
 	
 	/*
 	 * Second pass through assembly code. Converts to
-	 * Machine program. 
+	 * Machine code. 
 	 */
 	public static void secondPass(ArrayList<ArrayList<String>> program, Map<String, String> symbolTable, ArrayList<String> mCode,
 									Map<String, String> instruc, ArrayList<String> assembly, String outputFile) {
