@@ -1,0 +1,4 @@
+labelA:
+; empty line
+labelB: DW 0
+		DW 0

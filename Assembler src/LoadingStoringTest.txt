@@ -1,0 +1,45 @@
+; Testing NOP, PUSHPC, POPPC, LD, ST, DUP, DROP, OVER, DNEXT and SWAP
+PUSHPC		; program counter: 0 -> top
+OUT		; output 0
+PUSHI 20	; push 20 to top of stack
+PUSHI 30	; push 30 to top of stack
+SWAP		; swap 20 and 30
+OUT		; should output 20
+OUT		; should output 30
+PUSHI Label	; push address at label to top of stack
+PUSHI 5		; push 5 to top of stack
+ST		; store value 5 at memory location in label
+PUSHI Label	; push 12 to top of stack
+LD		; mem[Label] -> top, top should be 5
+DUP		; copy top of stack
+OUT		; output 5
+OUT		; output 5
+NOP		; do nothing
+PUSHPC		; program counter gets pushed to top: 16
+PUSHI 2		; push 2 to top
+OVER		; next top next: 16 2 16
+OUT		; display 16
+OUT		; display 2
+OUT		; display 16
+PUSHI 26	; push 26 to top of stack
+POPPC 		; pc = 26, current pc = 23
+PUSHI 30	; push 30 to top of stack		
+POPPC		; jump to address 30	
+PUSHI 26	; push 26 to top of stack
+OUT		; display 26
+PUSHI 24	; push 24 to stack
+POPPC		; change program counter to 24
+PUSHI 10	; push 10 to top of stack
+PUSHI 15	; push 15 to top of stack
+DROP		; drop top of stack;
+OUT		; display 10
+PUSHI 1
+PUSHI 2
+PUSHI 3
+DNEXT		; drop next: 1, 3
+OUT		; output 3
+OUT		; output 1
+HALT
+Label: 
+
+

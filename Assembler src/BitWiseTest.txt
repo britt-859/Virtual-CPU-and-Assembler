@@ -1,0 +1,25 @@
+; Testing bit shifting and bitwise operators, PUSH A and POP A
+PUSHI 12	; push 1 to top of stack
+PUSHI 1         ; push 12 to top
+SHL		; shift bits left by 1, 12 -> 24
+POP 5		; mem[5] = 24
+PUSHI 15	; push 3 to top of stack
+PUSHI 3		; push 15 to top of stack
+SHR		; shift bits right by 3, 15 -> 1
+POP 6		; mem[6] = 1
+PUSHI 12        ; push 12 to top of stack
+PUSH 5		; push value at memory location 5 to top, -> 24
+BOR		; 12 | 24 = 28
+OUT		; display 28
+PUSHI 5		; push 5 to top of stack
+PUSH 6		; push value at memory location 6 to top, -> 1
+BAND		; 5 & 1 = 1
+OUT		; display 1
+PUSHI 11	; push 11 to top of stack
+PUSHI 5		; push 5 to top of stack
+BXOR		; 5 ^ 11 = 14
+POP 7		; mem[7] = 14
+PUSH 7		; push mem[7] back on stack
+BNOT		; ~14 = -15
+OUT		; display -15
+HALT

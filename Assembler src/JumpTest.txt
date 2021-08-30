@@ -1,0 +1,22 @@
+; Testing the address jumping instructions, AND and OR
+PUSHI 1    ;true
+PUSHI 2    ; non-zero: true
+AND	   ; should return non-zero
+OUT	   ; output non-zero
+PUSHI 0    ; zero: false
+IN         ; zero: false non-zero: true
+OR	   ; False or False: False, false or true: true
+JZ 10	   ; if top == 0, go to program counter 11
+OUT	   ; output 1
+JMP in     ; program counter set to 12
+OUT        ; output 0
+PUSHI 1    ; push 1 to top of stack: true
+in:
+    IN	   ; If IN is 0: output 0, if IN is non-zero: output non-zero
+AND
+JNZ 17	   ; program counter set to 19
+OUT	   ; output 0		
+JMP end     ; jump to program counter that ends program
+OUT	   ; output non-zero
+end:
+     HALT 

@@ -1,0 +1,28 @@
+; Testing negative and positive numbers - twos complement
+PUSHI -25
+OUT
+PUSHI -255
+OUT
+PUSHI 5
+OUT
+PUSHI -4
+PUSHI -30
+ADD
+OUT		; -34
+PUSHI -4
+PUSHI -30
+SUB		; 26
+OUT
+PUSHI -7
+PUSHI 3
+MUL		; -21
+OUT
+PUSHI -5
+PUSHI -4
+MUL		; 20
+OUT
+PUSHI -9
+PUSHI 3
+DIV		; -3
+OUT
+HALT

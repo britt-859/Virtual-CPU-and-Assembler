@@ -1,0 +1,20 @@
+; Testing basic arithmetic instructions, input, and output
+PUSHI 100   ; push 100 onto the stack
+PUSHI 50    ; push 50 onto the stack
+ADD         ; add 100 to 50, push onto stack
+OUT         ; output 150 
+PUSHI 30    ; push 230 onto the stack
+PUSHI 10    ; push 10 onto the stack
+SUB         ; subtract 10 from 30
+PUSHI 2	    ; push 2 onto the stack
+MUL	    ; multiply 20 and 2 = 40
+OUT         ; output 40
+PUSHI 25    ; push 25 onto stack
+IN	    ; push onto stack the input value
+DIV	    ; 25 / IN. If in is 0, cpu stops execution
+OUT         ; output to screen it in is not 0
+PUSHI 2     ; push 2 onto stack
+PUSHI 4     ; push 4 onto stack
+MOD         ; 2 % 4 = 2
+OUT
+HALT        ; end program 

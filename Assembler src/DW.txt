@@ -1,0 +1,3 @@
+count: DW 1
+       DW 2
+       DW 3

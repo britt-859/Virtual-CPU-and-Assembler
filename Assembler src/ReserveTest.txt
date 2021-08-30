@@ -1,0 +1,6 @@
+PUSHI 225 ; push 225 onto the stack
+PUSHI 15 ; push 15 onto the stack
+ADD ; add 225 to 15, push result onto stack
+POP k ; store result at location k
+HALT ; halt the simulator
+k: DW 0 ; reserve a word for location k and initialize to 0

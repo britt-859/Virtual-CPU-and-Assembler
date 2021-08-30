@@ -1,0 +1,46 @@
+; Stores the first 8 prime numbers in an array and outputs the sum of the array
+
+; load the first 8 primes into the first 8 bytes of the array
+PUSHI 2
+POP 0
+PUSHI 3
+POP 1
+PUSHI 5
+POP 2
+PUSHI 7
+POP 3
+PUSHI 11
+POP 4
+PUSHI 13
+POP 5
+PUSHI 17
+POP 6
+PUSHI 19
+POP 7
+
+; output and sum the values in the array
+PUSHI 0
+POP 8		; initialize sum to 0 and store in address 8
+PUSHI 0
+POP 9		; initialize address 9 to 0, used in for loop
+
+PUSH 9
+PUSHI 8
+LT		; if value at address 9 is less than 8
+For: JZ endP    ; jump out of for loop if value is not less than 8
+    PUSH 9
+    LD		; ld mem[i]
+    DUP
+    PUSH 8      ; sum (mem[8])
+    ADD
+    POP 8
+    OUT
+    PUSH 9
+    PUSHI 1
+    ADD		; add 1 to i 
+    POP 9
+    JMP For	; jump back to line 20, for loop
+endP: 
+    PUSH 8
+    OUT		; output the total sum
+    HALT
